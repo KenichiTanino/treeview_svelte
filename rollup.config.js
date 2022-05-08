@@ -1,4 +1,5 @@
 import svelte from 'rollup-plugin-svelte';
+import dev from 'rollup-plugin-dev';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import livereload from 'rollup-plugin-livereload';
@@ -63,6 +64,15 @@ export default {
 		typescript({
 			sourceMap: !production,
 			inlineSources: !production
+		}),
+		!production && dev({
+			dirs: ['public'],
+			host: 'localhost',
+			port: 8080,
+			proxy: [{
+				from: '/api',
+				to: 'http://localhost:3000/api'
+			}]
 		}),
 
 		// In dev mode, call `npm run start` once
