@@ -45,9 +45,17 @@
 </script>
 
 <h2>content - {filename}</h2>
-<div>{$content}</div>
+<div>
+<pre>
+{$content}
+</pre>
+</div>
 
 <ButtonSet>
   <Button on:click={save}>保存</Button>
   <Button on:click={cancel}>前に戻る</Button>
 </ButtonSet>
+
+<style>
+pre {border: 1px solid gray}
+</style>

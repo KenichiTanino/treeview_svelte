@@ -34,8 +34,16 @@
 </script>
 
 <h1>{filename}</h1>
-<div>{fcontent}</div>
+<div>
+<pre>
+{fcontent}
+</pre>
+</div>
 
 <ButtonSet>
   <Button on:click={home}>戻る</Button>
 </ButtonSet>
+
+<style>
+pre {border: 1px solid gray}
+</style>

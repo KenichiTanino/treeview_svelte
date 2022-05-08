@@ -10,7 +10,6 @@
   let filename = "";
 
   function confirm() {
-    console.log($content);
     push("/confirm/" + params.fileid + "?filename=" + filename);
   }
 
